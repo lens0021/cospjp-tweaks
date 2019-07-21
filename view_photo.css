@@ -2,6 +2,10 @@
   width: auto !important;
 }
 
+#baseLayer > div:first-child {
+  padding-top: 0px !important;
+}
+
 #imgView {
   max-width: 100wh;
   max-height: 100vh;
