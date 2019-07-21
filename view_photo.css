@@ -1,5 +1,11 @@
+#baseLayer {
+  margin: auto !important;
+}
+
 #imgView {
   max-width: 100wh;
   max-height: 100vh;
   width: auto;
+  margin: auto;
+  display: block;
 }
