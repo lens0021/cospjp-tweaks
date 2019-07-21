@@ -1,0 +1,12 @@
+{
+  "name": "cosp.jp tweaks",
+  "version": "0.0",
+  "description": "Tweaks for cosp.jp",
+  "content_scripts": [
+    {
+      "matches": ["https://www.cosp.jp/view_photo.aspx*"],
+      "css": ["styles.css"]
+    }
+  ],
+  "manifest_version": 2
+}
