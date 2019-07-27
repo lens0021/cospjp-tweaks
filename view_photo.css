@@ -29,7 +29,8 @@
   transition: background-color 0.3s ease;
 }
 
-.black_mui14150:hover:not(:active) {
+.black_mui14150:hover:not(:active),
+.black_mui14150:hover:not(:active) * {
   background-color: transparent;
   color: transparent;
 }
