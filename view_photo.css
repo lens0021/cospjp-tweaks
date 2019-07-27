@@ -18,3 +18,18 @@
   max-width: 100%;
   max-height: 100vh;
 }
+
+.black_mui14150 {
+  position: absolute;
+  top: 20px;
+  background-color: #fff6;
+  max-height: 20em;
+  min-width: 10em;
+  padding: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.black_mui14150:hover:not(:active) {
+  background-color: transparent;
+  color: transparent;
+}
