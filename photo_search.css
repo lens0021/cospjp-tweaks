@@ -1,0 +1,10 @@
+#searchResult > table:nth-child(2) > tbody > tr > td:nth-child(1),
+#searchResult > table:nth-child(12) > tbody > tr > td:nth-child(1) {
+  display: none;
+}
+
+#searchResult > table:nth-child(2) > tbody > tr > td:nth-child(2) > table,
+#searchResult > table:nth-child(12) > tbody > tr > td:nth-child(2) > table {
+  margin: auto;
+  transform: scale(1.5);
+}
