@@ -5,7 +5,8 @@
   "content_scripts": [
     {
       "matches": ["https://www.cosp.jp/view_photo.aspx*"],
-      "css": ["view_photo.css"]
+      "css": ["view_photo.css"],
+      "js": ["view_photo.js"]
     }
   ],
   "manifest_version": 2
