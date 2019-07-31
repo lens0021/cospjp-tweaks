@@ -7,9 +7,10 @@
 }
 
 #imgView {
-  max-width: 100wh;
+  max-width: 100vw;
   max-height: 100vh;
   width: auto;
+  height: auto;
   margin: auto;
   display: block;
 }
