@@ -8,3 +8,20 @@
   margin: auto;
   transform: scale(1.5);
 }
+
+@media screen and (max-width: 1188px) {
+  form#MyForm > table:nth-child(5) > tbody > tr > td > table {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  form#MyForm > table:nth-child(8) > tbody > tr > td:first-child,
+  form#MyForm > table:nth-child(8) > tbody > tr > td:nth-child(2) {
+    display: none;
+  }
+
+  form#MyForm > table:nth-child(8) > tbody > tr > td:nth-child(3) {
+    max-width: 100vh;
+  }
+}
