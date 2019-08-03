@@ -5,12 +5,12 @@
   "content_scripts": [
     {
       "matches": ["https://www.cosp.jp/view_photo.aspx*"],
-      "css": ["view_photo.css"],
-      "js": ["view_photo.js"]
+      "css": ["styles/view_photo.css"],
+      "js": ["scripts/view_photo.js"]
     },
     {
       "matches": ["https://www.cosp.jp/photo_search.aspx*"],
-      "css": ["photo_search.css"]
+      "css": ["styles/photo_search.css"]
     }
   ],
   "manifest_version": 2

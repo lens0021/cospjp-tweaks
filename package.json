@@ -3,6 +3,7 @@
   "private": true,
   "description": "Tweaks for https://cosp.jp",
   "scripts": {
+    "zip": "zip -r extension.zip scripts/ styles/ manifest.json",
     "test": "node_modules/eslint/bin/eslint ."
   },
   "repository": {
