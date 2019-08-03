@@ -1,6 +1,6 @@
 {
   "name": "cospjp-tweaks",
-  "version": "0.1.0",
+  "private": true,
   "description": "Tweaks for https://cosp.jp",
   "scripts": {
     "test": "node_modules/eslint/bin/eslint ."
@@ -12,7 +12,7 @@
   "keywords": [
     "chrome-extension"
   ],
-  "author": "Len0021 <lorentz0021@gmail.com>",
+  "author": "Lens0021 <lorentz0021@gmail.com>",
   "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/lens0021/tweaks-for-cospjp/issues"
