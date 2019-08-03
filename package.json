@@ -1,0 +1,27 @@
+{
+  "name": "cospjp-tweaks",
+  "version": "0.1.0",
+  "description": "Tweaks for https://cosp.jp",
+  "scripts": {
+    "test": "node_modules/eslint/bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lens0021/tweaks-for-cospjp.git"
+  },
+  "keywords": [
+    "chrome-extension"
+  ],
+  "author": "Len0021 <lorentz0021@gmail.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lens0021/tweaks-for-cospjp/issues"
+  },
+  "homepage": "https://github.com/lens0021/tweaks-for-cospjp#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "1.18.2"
+  }
+}
