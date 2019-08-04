@@ -8,13 +8,15 @@
   right: 0;
   bottom: 0;
   left: 0;
+  $left-padding: 20px;
+  padding-left: $left-padding;
 
   & > div:first-child {
     padding-top: 0px !important;
   }
 
-  & > *:not(.image_box) {
-    margin-left: 20px;
+  #originalLink {
+    width: 720px !important;
   }
 
   div.image_box {
@@ -24,20 +26,23 @@
     height: 100%;
     z-index: 100;
     background-color: $gray-tint-color;
+    margin-left: -20px;
 
     & > * {
       position: absolute;
       max-width: 100%;
       max-height: 100%;
-      left: 0;
+      top: 0;
       right: 0;
+      bottom: 0;
+      left: 0;
     }
 
     #imgView {
       margin: auto;
       display: block;
-      width: auto !important;
-      height: auto !important;
+      width: auto;
+      height: auto;
     }
 
     .image_mask {
@@ -47,9 +52,10 @@
     }
 
     &.magnified {
-      overflow-y: scroll;
+      overflow: auto;
 
       #imgView {
+        position: relative;
         max-width: unset;
         max-height: unset;
       }
@@ -60,4 +66,22 @@
 #photo_footer {
   position: absolute;
   z-index: 0;
+}
+
+.close-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  background: none;
+  border: none;
+  z-index: 200;
+
+  &:focus {
+    outline: 0;
+  }
 }

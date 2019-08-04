@@ -1,35 +1,49 @@
-#searchResult > table:nth-child(2) > tbody > tr > td:nth-child(1),
-#searchResult > table:nth-child(12) > tbody > tr > td:nth-child(1) {
-  display: none;
-}
+#searchResult {
+  & > table:nth-child(2),
+  & > table:nth-child(12) {
+    & > tbody > tr {
+      // Big nevigation buttons
+      & > td:nth-child(2) > table {
+        margin: auto;
+        transform: scale(1.5);
+      }
 
-#searchResult > table:nth-child(2) > tbody > tr > td:nth-child(2) > table,
-#searchResult > table:nth-child(12) > tbody > tr > td:nth-child(2) > table {
-  margin: auto;
-  transform: scale(1.5);
+      // Hide nevigation numbers
+      & > td:nth-child(1) {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1188px) {
+  // Override fixed width
   form#MyForm > table:nth-child(5) > tbody > tr > td > table {
     width: 100%;
   }
 
   div.globalmenu2016 {
+    // Extend container of buttons
     height: auto;
-  }
 
-  ul.globalmenu-ul2016 {
-    width: auto;
+    // Shrink horizontally
+    & > ul.globalmenu-ul2016 {
+      width: auto;
+    }
   }
 }
 
 @media screen and (max-width: 1070px) {
-  form#MyForm > table:nth-child(8) > tbody > tr > td:first-child,
-  form#MyForm > table:nth-child(8) > tbody > tr > td:nth-child(2) {
-    display: none;
-  }
+  form#MyForm > table:nth-child(8) > tbody > tr {
+    // Hide sidebar
+    & > td:first-child,
+    & > td:nth-child(2) {
+      display: none;
+    }
 
-  form#MyForm > table:nth-child(8) > tbody > tr > td:nth-child(3) {
-    max-width: 100vh;
+    // Extend main layout
+    & > td:nth-child(3) {
+      max-width: 100vh;
+    }
   }
 }
