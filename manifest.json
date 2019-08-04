@@ -1,16 +1,20 @@
 {
   "name": "cosp.jp tweaks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tweaks for cosp.jp",
   "content_scripts": [
     {
-      "matches": ["https://www.cosp.jp/view_photo.aspx*"],
+      "matches": ["*://www.cosp.jp/view_photo.aspx*"],
       "css": ["styles/view_photo.css"],
       "js": ["scripts/view_photo.js"]
     },
     {
-      "matches": ["https://www.cosp.jp/photo_search.aspx*"],
-      "css": ["styles/photo_search.css"]
+      "matches": ["*://www.cosp.jp/photo_search.aspx*"],
+      "css": ["styles/search.css"]
+    },
+    {
+      "matches": ["*://www.cosp.jp/photostock_search.aspx*"],
+      "css": ["styles/search.css"]
     }
   ],
   "manifest_version": 2

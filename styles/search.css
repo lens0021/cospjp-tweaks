@@ -13,6 +13,14 @@
   form#MyForm > table:nth-child(5) > tbody > tr > td > table {
     width: 100%;
   }
+
+  div.globalmenu2016 {
+    height: auto;
+  }
+
+  ul.globalmenu-ul2016 {
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 1070px) {
