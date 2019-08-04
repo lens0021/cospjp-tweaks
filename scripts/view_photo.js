@@ -11,6 +11,18 @@ const toggleImageBox = () => {
     imageBox.style.visibility == "hidden" ? "visible" : "hidden";
 };
 
+const moveToScroll = e => {
+  if (!imageBox.classList.contains("magnified")) {
+    return;
+  }
+  const windowW = window.innerWidth;
+  const windowH = window.innerHeight;
+  imageBox.scroll(
+    (e.pageX / window.innerWidth) * (imageBox.scrollWidth - windowW),
+    (e.pageY / window.innerHeight) * (imageBox.scrollHeight - windowH)
+  );
+};
+
 document.onkeydown = e => {
   e = e || window.event;
   if (
@@ -36,6 +48,7 @@ body.addEventListener("click", e => {
 imageMask.addEventListener("click", e => {
   e.stopPropagation();
   imageBox.classList.toggle("magnified");
+  moveToScroll(e);
 });
 
 closeButton.classList.add("close-button");
@@ -45,3 +58,5 @@ closeButton.addEventListener("click", e => {
   e.preventDefault();
   window.close();
 });
+
+document.onmousemove = moveToScroll;
