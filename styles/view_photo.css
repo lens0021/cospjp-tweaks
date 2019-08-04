@@ -1,9 +1,23 @@
 #baseLayer {
   width: auto !important;
+  margin-left: 0 !important;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #baseLayer > div:first-child {
   padding-top: 0px !important;
+}
+
+div.image_box {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }
 
 #imgView {
@@ -16,22 +30,12 @@
 }
 
 .image_mask {
-  max-width: 100%;
+  max-width: 100vw;
   max-height: 100vh;
+  margin: auto;
 }
 
-.black_mui14150 {
+#photo_footer {
   position: absolute;
-  top: 20px;
-  background-color: #fff6;
-  max-height: 20em;
-  min-width: 10em;
-  padding: 1em;
-  transition: background-color 0.3s ease;
-}
-
-.black_mui14150:hover:not(:active),
-.black_mui14150:hover:not(:active) * {
-  background-color: transparent;
-  color: transparent;
+  z-index: 0;
 }
