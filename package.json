@@ -3,8 +3,9 @@
   "private": true,
   "description": "Tweaks for https://cosp.jp",
   "scripts": {
-    "zip": "zip -r extension.zip scripts/ styles/ manifest.json",
-    "test": "node_modules/eslint/bin/eslint ."
+    "test": "node_modules/eslint/bin/eslint .",
+    "scss": "node_modules/sass/sass.js --watch scss/:styles/",
+    "zip": "zip -r extension.zip scripts/ styles/ manifest.json"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "sass": "^1.22.9"
   }
 }
