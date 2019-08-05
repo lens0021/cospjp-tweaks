@@ -3,6 +3,7 @@
 const body = document.querySelector("body");
 const imageBox = document.querySelector(".image_box");
 const imageMask = document.querySelector(".image_mask");
+const imgView = document.querySelector("#imgView");
 const photoFooter = document.querySelector("#photo_footer");
 const closeButton = document.createElement("button");
 
@@ -21,6 +22,11 @@ const moveToScroll = e => {
     (e.pageX / window.innerWidth) * (imageBox.scrollWidth - windowW),
     (e.pageY / window.innerHeight) * (imageBox.scrollHeight - windowH)
   );
+};
+
+const adjustMaskSize = () => {
+  imageMask.style.width = imgView.width;
+  imageMask.style.height = imgView.height;
 };
 
 document.onkeydown = e => {
@@ -49,6 +55,7 @@ imageMask.addEventListener("click", e => {
   e.stopPropagation();
   imageBox.classList.toggle("magnified");
   moveToScroll(e);
+  adjustMaskSize();
 });
 
 closeButton.classList.add("close-button");
@@ -60,3 +67,5 @@ closeButton.addEventListener("click", e => {
 });
 
 document.onmousemove = moveToScroll;
+
+adjustMaskSize();

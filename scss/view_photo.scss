@@ -52,10 +52,10 @@
     }
 
     &.magnified {
-      overflow: auto;
+      overflow: hidden;
+      z-index: 201;
 
-      #imgView {
-        position: relative;
+      & > * {
         max-width: unset;
         max-height: unset;
       }
@@ -64,7 +64,9 @@
 }
 
 #photo_footer {
-  position: absolute;
+  position: absolute !important;
+  left: 0;
+  right: 0;
   z-index: 0;
 }
 
@@ -83,5 +85,22 @@
 
   &:focus {
     outline: 0;
+  }
+}
+
+@media screen and (max-width: 808px) {
+  #photo_footer img {
+    display: none;
+  }
+
+  #photo_footer > table > tbody:after {
+    content: "No reproduction or republication without permission. 本站内图文请勿随意转载 本站内圖文請勿隨意轉載 게시물 무단 전재 복사 배포 등을 금지합니다";
+    display: block;
+    margin-left: 14px;
+    margin-right: 14px;
+    word-wrap: normal;
+    color: white;
+    font-size: 10px;
+    font-family: "sans-serif";
   }
 }
