@@ -74,6 +74,7 @@
 
 .close-button {
   position: absolute;
+  display: block;
   right: 1rem;
   top: 1rem;
   font-size: 3em;
@@ -85,8 +86,8 @@
   border: none;
   z-index: 200;
 
-  &:focus {
-    outline: 0;
+  &:hover {
+    text-decoration: none;
   }
 }
 

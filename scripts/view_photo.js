@@ -5,7 +5,7 @@ const imageBox = document.querySelector(".image_box");
 const imageMask = document.querySelector(".image_mask");
 const imgView = document.querySelector("#imgView");
 const photoFooter = document.querySelector("#photo_footer");
-const closeButton = document.createElement("button");
+const closeButton = document.createElement("a");
 
 const toggleImageBox = () => {
   imageBox.style.visibility =
