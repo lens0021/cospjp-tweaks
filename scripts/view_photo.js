@@ -4,6 +4,8 @@
 // Tweak Existing Elements.
 //
 const body = document.querySelector("body");
+const baseLayer = document.querySelector("#baseLayer");
+
 const imageBox = document.querySelector(".image_box");
 const imageMask = document.querySelector(".image_mask");
 const imgView = document.querySelector("#imgView");
@@ -56,7 +58,10 @@ imageBox.addEventListener("click", e => {
   e.stopPropagation();
   toggleImageBox();
 });
-body.addEventListener("click", e => {
+baseLayer.addEventListener("click", e => {
+  if (e.target !== baseLayer) {
+    return;
+  }
   e.stopPropagation();
   toggleImageBox();
 });
