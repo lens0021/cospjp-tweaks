@@ -77,3 +77,10 @@ closeButton.addEventListener("click", e => {
 document.onmousemove = moveToScroll;
 
 adjustMaskSize();
+
+if (
+  imgView.attributes.width.value == imgView.width &&
+  imgView.attributes.height.value == imgView.height
+) {
+  imageMask.style.cursor = "auto";
+}
