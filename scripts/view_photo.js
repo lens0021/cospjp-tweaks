@@ -6,21 +6,22 @@ const imageMask = document.querySelector(".image_mask");
 const imgView = document.querySelector("#imgView");
 const photoFooter = document.querySelector("#photo_footer");
 const closeButton = document.createElement("a");
+const rotateButton = document.createElement("a");
 
 const toggleImageBox = () => {
   imageBox.style.visibility =
     imageBox.style.visibility == "hidden" ? "visible" : "hidden";
 };
 
-const moveToScroll = e => {
+const mouseMoveToScroll = e => {
   if (!imageBox.classList.contains("magnified")) {
     return;
   }
   const windowW = window.innerWidth;
   const windowH = window.innerHeight;
   imageBox.scroll(
-    (e.pageX / window.innerWidth) * (imageBox.scrollWidth - windowW),
-    (e.pageY / window.innerHeight) * (imageBox.scrollHeight - windowH)
+    (e.pageX / windowW) * (imageBox.scrollWidth - windowW),
+    (e.pageY / windowH) * (imageBox.scrollHeight - windowH)
   );
 };
 
@@ -28,6 +29,36 @@ const adjustMaskSize = () => {
   imageMask.style.width = imgView.width;
   imageMask.style.height = imgView.height;
 };
+
+closeButton.classList.add("button", "close-button");
+closeButton.innerText = "×";
+body.appendChild(closeButton);
+closeButton.addEventListener("click", e => {
+  e.preventDefault();
+  e.stopPropagation();
+  window.close();
+});
+
+rotateButton.classList.add("button", "rotate-button");
+rotateButton.innerText = "↷";
+rotateButton.addEventListener("click", e => {
+  e.preventDefault();
+  e.stopPropagation();
+  const match = imgView.style.transform.match(/(\d+)deg/);
+  const deg = match == null ? 0 : parseInt(match[1]);
+  imgView.style.transform = `rotate(${(deg + 90) % 360}deg)`;
+  imageMask.style.transform = `rotate(${(deg + 90) % 360}deg)`;
+});
+imageBox.appendChild(rotateButton);
+
+const originalLink = document.querySelector("#originalLink > .site");
+if (originalLink !== null) {
+  const moreMagnifyButton = document.createElement("a");
+  moreMagnifyButton.classList.add("button", "more-magnify-button");
+  moreMagnifyButton.innerText = "⧉";
+  moreMagnifyButton.href = originalLink.href;
+  imageBox.appendChild(moreMagnifyButton);
+}
 
 document.onkeydown = e => {
   e = e || window.event;
@@ -37,7 +68,7 @@ document.onkeydown = e => {
   ) {
     return;
   }
-
+  e.preventDefault();
   toggleImageBox();
 };
 
@@ -61,20 +92,11 @@ imageMask.addEventListener("click", e => {
     return;
   }
   imageBox.classList.toggle("magnified");
-  moveToScroll(e);
+  mouseMoveToScroll(e);
   adjustMaskSize();
 });
 
-closeButton.classList.add("close-button");
-closeButton.innerText = "×";
-body.appendChild(closeButton);
-closeButton.addEventListener("click", e => {
-  e.preventDefault();
-  e.stopPropagation();
-  window.close();
-});
-
-document.onmousemove = moveToScroll;
+document.onmousemove = mouseMoveToScroll;
 
 adjustMaskSize();
 
