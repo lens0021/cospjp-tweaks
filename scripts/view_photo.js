@@ -53,6 +53,13 @@ body.addEventListener("click", e => {
 
 imageMask.addEventListener("click", e => {
   e.stopPropagation();
+  if (
+    !imageBox.classList.contains("magnified") &&
+    imgView.attributes.width.value == imgView.width &&
+    imgView.attributes.height.value == imgView.height
+  ) {
+    return;
+  }
   imageBox.classList.toggle("magnified");
   moveToScroll(e);
   adjustMaskSize();
@@ -63,6 +70,7 @@ closeButton.innerText = "×";
 body.appendChild(closeButton);
 closeButton.addEventListener("click", e => {
   e.preventDefault();
+  e.stopPropagation();
   window.close();
 });
 
