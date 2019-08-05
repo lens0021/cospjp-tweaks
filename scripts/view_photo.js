@@ -1,18 +1,29 @@
 "strict";
 
+//
+// Tweak Existing Elements.
+//
 const body = document.querySelector("body");
 const imageBox = document.querySelector(".image_box");
 const imageMask = document.querySelector(".image_mask");
 const imgView = document.querySelector("#imgView");
 const photoFooter = document.querySelector("#photo_footer");
-const closeButton = document.createElement("a");
-const rotateButton = document.createElement("a");
 
+const imageIsMagnifiable =
+  imgView.attributes.width.value != imgView.width ||
+  imgView.attributes.height.value != imgView.height;
+
+// Define functions
+/**
+ * Hide/show the image box.
+ */
 const toggleImageBox = () => {
   imageBox.style.visibility =
     imageBox.style.visibility == "hidden" ? "visible" : "hidden";
 };
-
+/**
+ * Scroll large image based on the movement of the user's mouse pointer.
+ */
 const mouseMoveToScroll = e => {
   if (!imageBox.classList.contains("magnified")) {
     return;
@@ -24,20 +35,57 @@ const mouseMoveToScroll = e => {
     (e.pageY / windowH) * (imageBox.scrollHeight - windowH)
   );
 };
-
+/**
+ * Always guarantee that size of the image mask equals to image's.
+ */
 const adjustMaskSize = () => {
   imageMask.style.width = imgView.width;
   imageMask.style.height = imgView.height;
 };
 
+// Attach functions
+document.onkeydown = e => {
+  e = e || window.event;
+  if (!"key" in e || e.key !== "Escape") {
+    return;
+  }
+  e.preventDefault();
+  toggleImageBox();
+};
+imageBox.addEventListener("click", e => {
+  e.stopPropagation();
+  toggleImageBox();
+});
+body.addEventListener("click", e => {
+  e.stopPropagation();
+  toggleImageBox();
+});
+imageMask.addEventListener("click", e => {
+  e.stopPropagation();
+  if (!imageBox.classList.contains("magnified") && !imageIsMagnifiable) {
+    return;
+  }
+  imageBox.classList.toggle("magnified");
+  mouseMoveToScroll(e);
+  adjustMaskSize();
+});
+document.onmousemove = mouseMoveToScroll;
+
+//
+// Add new elements
+//
+
+const closeButton = document.createElement("a");
+const rotateButton = document.createElement("a");
+
 closeButton.classList.add("button", "close-button");
 closeButton.innerText = "×";
-body.appendChild(closeButton);
 closeButton.addEventListener("click", e => {
   e.preventDefault();
   e.stopPropagation();
   window.close();
 });
+body.appendChild(closeButton);
 
 rotateButton.classList.add("button", "rotate-button");
 rotateButton.innerText = "↷";
@@ -60,49 +108,11 @@ if (originalLink !== null) {
   imageBox.appendChild(moreMagnifyButton);
 }
 
-document.onkeydown = e => {
-  e = e || window.event;
-  if (
-    !"key" in e ||
-    (e.key !== "Escape" && e.key !== "Esc" && e.keyCode !== 27)
-  ) {
-    return;
-  }
-  e.preventDefault();
-  toggleImageBox();
-};
-
-imageBox.addEventListener("click", e => {
-  e.stopPropagation();
-  toggleImageBox();
-});
-
-body.addEventListener("click", e => {
-  e.stopPropagation();
-  toggleImageBox();
-});
-
-imageMask.addEventListener("click", e => {
-  e.stopPropagation();
-  if (
-    !imageBox.classList.contains("magnified") &&
-    imgView.attributes.width.value == imgView.width &&
-    imgView.attributes.height.value == imgView.height
-  ) {
-    return;
-  }
-  imageBox.classList.toggle("magnified");
-  mouseMoveToScroll(e);
-  adjustMaskSize();
-});
-
-document.onmousemove = mouseMoveToScroll;
-
+//
+// Etc initializing processes
+//
 adjustMaskSize();
 
-if (
-  imgView.attributes.width.value == imgView.width &&
-  imgView.attributes.height.value == imgView.height
-) {
+if (!imageIsMagnifiable) {
   imageMask.style.cursor = "auto";
 }
