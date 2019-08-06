@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/lens0021/cospjp-tweaks/issues"
   },
-  "homepage": "https://github.com/lens0021/cospjp-tweaks#readme",
+  "homepage": "https://github.com/lens0021/cospjp-tweaks",
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
