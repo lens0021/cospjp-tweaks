@@ -1,7 +1,7 @@
 {
   "name": "cospjp-tweaks",
   "private": true,
-  "description": "Tweaks for https://cosp.jp",
+  "description": "Google Chrome extension to tweak https://cosp.jp",
   "scripts": {
     "test": "node_modules/eslint/bin/eslint.js .",
     "scss": "node_modules/sass/sass.js --watch scss/:styles/",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lens0021/tweaks-for-cospjp.git"
+    "url": "git+https://github.com/lens0021/cospjp-tweaks.git"
   },
   "keywords": [
     "chrome-extension"
@@ -17,9 +17,9 @@
   "author": "Lens0021 <lorentz0021@gmail.com>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/lens0021/tweaks-for-cospjp/issues"
+    "url": "https://github.com/lens0021/cospjp-tweaks/issues"
   },
-  "homepage": "https://github.com/lens0021/tweaks-for-cospjp#readme",
+  "homepage": "https://github.com/lens0021/cospjp-tweaks#readme",
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
