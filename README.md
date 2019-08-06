@@ -2,8 +2,6 @@
 
 [Google Chrome extension] to tweak [COSPLAYER ARCAHIVE].
 
-https://www.cosp.jp.
-
 ## Development
 
 [npm] is required to build.
