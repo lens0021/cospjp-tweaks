@@ -1,18 +1,22 @@
 # cospjp-tweaks
 
-A [Google Chrome extension] to tweak https://www.cosp.jp
+[Google Chrome extension] to tweak [COSPLAYER ARCAHIVE].
+
+https://www.cosp.jp.
 
 ## Development
 
-You need [npm] to build.
+[npm] is required to build.
 
 ```sh
 git clone https://github.com/lens0021/cospjp-tweaks.git
 cd cospjp-tweaks
 npm install
+npm run zip
 ```
 
-And you can see [Getting Started Tutorial](https://developer.chrome.com/extensions/getstarted) of Google Chrome Developer Guide.
+See [Getting Started Tutorial](https://developer.chrome.com/extensions/getstarted)
+of Google Chrome Developer Guide for more infomation.
 
 ### npm commands
 
@@ -20,4 +24,5 @@ And you can see [Getting Started Tutorial](https://developer.chrome.com/extensio
 - `npm run zip`: Compress files into a zip file that can be used to publish.
 
 [google chrome extension]: https://developer.chrome.com/extensions
+[cosplayer arcahive]: https://www.cosp.jp
 [npm]: https://npmjs.com
