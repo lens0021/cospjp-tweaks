@@ -101,6 +101,10 @@ rotateButton.addEventListener("click", e => {
   const deg = match == null ? 0 : parseInt(match[1]);
   imgView.style.transform = `rotate(${(deg + 90) % 360}deg)`;
   imageMask.style.transform = `rotate(${(deg + 90) % 360}deg)`;
+
+  imgView.classList.toggle("xy-swapped");
+  imageMask.classList.toggle("xy-swapped");
+  adjustMaskSize();
 });
 imageBox.appendChild(rotateButton);
 
