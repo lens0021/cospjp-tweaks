@@ -66,8 +66,8 @@ div.image_box {
     overflow: hidden;
     z-index: 201;
 
-    #imgView,
-    .image_mask {
+    #imgView:not(.xy-swapped),
+    .image_mask:not(.xy-swapped) {
       max-width: unset;
       max-height: unset;
       margin-top: 0 !important;

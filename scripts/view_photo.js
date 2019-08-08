@@ -72,11 +72,16 @@ imageMask.addEventListener("click", e => {
   }
   imageBox.classList.toggle("magnified");
 
-  if (imageBox.classList.contains("magnified")) {
-    const vertical = (imgView.width - imgView.height) / 2;
-    const horizontal = (imgView.height - imgView.width) / 2;
-    imgView.style.margin = `${vertical}px ${horizontal}px`;
-    imageMask.style.margin = `${vertical}px ${horizontal}px`;
+  if (
+    imageBox.classList.contains("magnified") &&
+    imgView.classList.contains("xy-swapped")
+  ) {
+    var margin = (imgView.width - imgView.height) / 2;
+    if (imgView.width > imgView.height) {
+      margin = -margin;
+    }
+    imgView.style.margin = `${margin}px ${-margin}px`;
+    imageMask.style.margin = `${margin}px ${-margin}px`;
   } else {
     imgView.style.margin = "auto";
     imageMask.style.margin = "auto";
