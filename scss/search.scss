@@ -34,16 +34,22 @@
 }
 
 @media screen and (max-width: 1070px) {
-  form#MyForm > table:nth-child(8) > tbody > tr {
-    // Hide sidebar
-    & > td:first-child,
-    & > td:nth-child(2) {
-      display: none;
-    }
+  form#MyForm {
+    & > table:nth-child(8) {
+      width: auto;
 
-    // Extend main layout
-    & > td:nth-child(3) {
-      max-width: 100vh;
+      & > tbody > tr {
+        // Hide sidebar
+        & > td:first-child,
+        & > td:nth-child(2) {
+          display: none;
+        }
+
+        // Extend main layout
+        & > td:nth-child(3) {
+          max-width: 100vh;
+        }
+      }
     }
   }
 }
