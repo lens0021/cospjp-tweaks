@@ -71,6 +71,17 @@ imageMask.addEventListener("click", e => {
     return;
   }
   imageBox.classList.toggle("magnified");
+
+  if (imageBox.classList.contains("magnified")) {
+    const vertical = (imgView.width - imgView.height) / 2;
+    const horizontal = (imgView.height - imgView.width) / 2;
+    imgView.style.margin = `${vertical}px ${horizontal}px`;
+    imageMask.style.margin = `${vertical}px ${horizontal}px`;
+  } else {
+    imgView.style.margin = "auto";
+    imageMask.style.margin = "auto";
+  }
+
   mouseMoveToScroll(e);
   adjustMaskSize();
 });
@@ -99,8 +110,9 @@ rotateButton.addEventListener("click", e => {
   e.stopPropagation();
   const match = imgView.style.transform.match(/(\d+)deg/);
   const deg = match == null ? 0 : parseInt(match[1]);
-  imgView.style.transform = `rotate(${(deg + 90) % 360}deg)`;
-  imageMask.style.transform = `rotate(${(deg + 90) % 360}deg)`;
+  const newDeg = (deg + 90) % 360;
+  imgView.style.transform = `rotate(${newDeg}deg)`;
+  imageMask.style.transform = `rotate(${newDeg}deg)`;
 
   imgView.classList.toggle("xy-swapped");
   imageMask.classList.toggle("xy-swapped");
