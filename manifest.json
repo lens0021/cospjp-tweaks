@@ -1,6 +1,6 @@
 {
   "name": "cosp.jp tweaks",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Tweaks for cosp.jp",
   "content_scripts": [
     {
