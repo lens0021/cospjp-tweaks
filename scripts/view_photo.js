@@ -120,6 +120,9 @@ if (originalLink !== null) {
 //
 // Etc initializing processes
 //
+imageBox.parentElement.removeChild(imageBox);
+body.append(imageBox);
+
 adjustMaskSize();
 
 if (!imageIsMagnifiable) {

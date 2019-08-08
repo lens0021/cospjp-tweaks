@@ -8,8 +8,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  $left-padding: 20px;
-  padding-left: $left-padding;
+  padding-top: 20px;
+  padding-left: 20px;
 
   & > div:first-child {
     padding-top: 0px !important;
@@ -18,15 +18,19 @@
   #originalLink {
     width: 720px !important;
   }
+}
 
   div.image_box {
     position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
     margin: auto;
     width: 100%;
     height: 100%;
     z-index: 100;
     background-color: $gray-tint-color;
-    margin-left: -20px;
 
     #imgView,
     .image_mask {
@@ -75,7 +79,6 @@
       }
     }
   }
-}
 
 #photo_footer {
   position: absolute !important;
