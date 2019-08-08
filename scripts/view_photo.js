@@ -9,7 +9,6 @@ const baseLayer = document.querySelector("#baseLayer");
 const imageBox = document.querySelector(".image_box");
 const imageMask = document.querySelector(".image_mask");
 const imgView = document.querySelector("#imgView");
-const photoFooter = document.querySelector("#photo_footer");
 
 const imageIsMagnifiable =
   imgView.attributes.width.value != imgView.width ||
