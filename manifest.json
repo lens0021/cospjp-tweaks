@@ -4,16 +4,16 @@
   "description": "Tweaks for cosp.jp",
   "content_scripts": [
     {
-      "matches": ["*://www.cosp.jp/view_photo.aspx*"],
+      "matches": ["*://*.cosp.jp/view_photo.aspx*"],
       "css": ["styles/view_photo.css"],
       "js": ["scripts/view_photo.js"]
     },
     {
-      "matches": ["*://www.cosp.jp/photo_search.aspx*"],
+      "matches": ["*://*.cosp.jp/photo_search.aspx*"],
       "css": ["styles/search.css"]
     },
     {
-      "matches": ["*://www.cosp.jp/photostock_search.aspx*"],
+      "matches": ["*://*.cosp.jp/photostock_search.aspx*"],
       "css": ["styles/search.css"]
     }
   ],
