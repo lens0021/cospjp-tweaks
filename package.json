@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/lens0021/cospjp-tweaks",
   "devDependencies": {
-    "sass": "^1.22.9",
-    "prettier": "1.18.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "1.18.2",
+    "sass": "^1.22.9",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-prettier": "^1.1.1"
